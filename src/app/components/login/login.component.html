@@ -1,0 +1,32 @@
+<div class="container" style="padding-right: 250px;
+padding-left: 250px;
+margin-right: auto;
+margin-left: auto;
+margin-top: 50px;
+margin-bottom: 50px;">
+  <div class="card">
+    <header class="card-header">
+      <h4 class="card-title mt-2">Login de Proveedor</h4>
+    </header>
+    <article class="card-body">
+      <form>
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" [(ngModel)]="proveedor.correo" name="correo" class="form-control" placeholder="">
+
+        </div> <!-- form-group end.// -->
+
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input class="form-control" type="password" name="contrasena" [(ngModel)]="proveedor.contrasena">
+        </div> <!-- form-group end.// -->
+        <div class="form-group">
+          <button (click)="login()" type="submit" class="btn btn-primary btn-block"> Ingresar </button>
+        </div> <!-- form-group// -->
+
+      </form>
+    </article> <!-- card-body end .// -->
+
+  </div> <!-- card.// -->
+
+</div>

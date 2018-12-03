@@ -1,0 +1,40 @@
+<article class="card card-product" *ngFor="let item of items">
+  <div class="card-body">
+    <div class="row">
+      <aside class="col-sm-3">
+        <div class="img-wrap"><img [src]="item.foto"></div>
+      </aside> <!-- col.// -->
+      <article class="col-sm-6">
+        <h4 class="title"> {{item.nombre}} </h4>
+
+        <p> {{item.descripcion}} </p>
+        <dl class="dlist-align">
+          <dt>Medida</dt>
+          <dd>{{item.medida}}</dd>
+        </dl> <!-- item-property-hor .// -->
+        <dl class="dlist-align">
+          <dt>Categoria</dt>
+          <dd>{{ cargarCategoria(item.codigo).toString() }}</dd>
+        </dl> <!-- item-property-hor .// -->
+        <dl class="dlist-align">
+          <dt>Región</dt>
+          <dd>{{item.region}}</dd>
+        </dl> <!-- item-property-hor .// -->
+
+      </article> <!-- col.// -->
+      <aside class="col-sm-3 border-left">
+        <div class="action-wrap">
+          <div class="price-wrap h4">
+            <span class="price"> S/.{{item.precioMin}} - S/.{{item.precioMax}} </span>
+
+          </div> <!-- info-price-detail // -->
+
+          <br>
+          <p>
+            <a style="color: white" class="btn btn-primary btn-block" (click)="contactar( item )"> Contactar</a>
+          </p>
+        </div> <!-- action-wrap.// -->
+      </aside> <!-- col.// -->
+    </div> <!-- row.// -->
+  </div> <!-- card-body .// -->
+</article> <!-- card product .// -->

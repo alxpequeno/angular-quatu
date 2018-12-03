@@ -1,0 +1,81 @@
+<section class="section-content bg padding-y-sm">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xl-10 col-md-9 col-sm-12">
+
+
+        <main class="card">
+          <div class="row no-gutters">
+            <aside class="col-sm-6 border-right">
+              <article class="gallery-wrap">
+                <div class="img-big-wrap">
+                  <div> <a data-fancybox=""><img [src]="producto?.foto"></a></div>
+                </div> <!-- slider-product.// -->
+
+              </article> <!-- gallery-wrap .end// -->
+            </aside>
+            <aside class="col-sm-6">
+              <article class="card-body">
+                <!-- short-info-wrap -->
+                <h3 class="title mb-3">{{producto?.nombre}}</h3>
+
+                <div class="mb-3">
+                  <var class="price h3 text-warning">
+                    <span class="num">S/.{{producto?.precioMin}} - S/.{{producto?.precioMax}}</span>
+                  </var>
+                </div> <!-- price-detail-wrap .// -->
+                <dl>
+                  <dt>Descripción</dt>
+                  <dd>
+                    <p>{{producto?.descripcion}} </p>
+                  </dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col-sm-3">Medida</dt>
+                  <dd class="col-sm-9">{{producto?.medida}}</dd>
+
+                  <dt class="col-sm-3">Categoria</dt>
+                  <dd class="col-sm-9">Carnes y Aves </dd>
+
+                  <dt class="col-sm-3">Región</dt>
+                  <dd class="col-sm-9">{{producto?.region}}</dd>
+                </dl>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <dl class="dlist-inline">
+                      <dt>Email: </dt>
+                      <dd>
+                        <span>{{proveedor?.correo}}</span>
+                      </dd>
+                    </dl> <!-- item-property .// -->
+                  </div> <!-- col.// -->
+
+        
+
+                </div> <!-- row.// -->
+                <hr>
+
+                <!-- short-info-wrap .// -->
+              </article> <!-- card-body.// -->
+            </aside> <!-- col.// -->
+          </div> <!-- row.// -->
+        </main> <!-- card.// -->
+
+        <!-- PRODUCT DETAIL -->
+        <article class="card mt-3">
+          <div class="card-body">
+            <h4>Resumen</h4>
+           {{producto?.resumen}}
+          </div> <!-- card-body.// -->
+        </article> <!-- card.// -->
+
+        <!-- PRODUCT DETAIL .// -->
+
+
+
+      </div><!-- container // -->
+    </div>
+  </div>
+</section>

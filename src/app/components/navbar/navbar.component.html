@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> <img class="logo"> Qhatu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbar1">
+    <ul class="navbar-nav ml-auto">
+
+      <li *ngIf="!isLogueado()" class="nav-item"><a [routerLink]="['registrar-proveedor']" class="nav-link"> Registrar
+        </a></li>
+      <li *ngIf="!isLogueado()" class="nav-item">
+        <a class="btn ml-2 btn-warning" [routerLink]="['login']">Acceder</a></li>
+      <li *ngIf="isLogueado()" class="nav-item">
+          <a class="btn ml-2 btn-info" [routerLink]="['perfil']">Perfil</a></li>
+          <li *ngIf="isLogueado()" class="nav-item">
+        <a class="btn ml-2 btn-success" [routerLink]="['registrar-producto']">Registrar Producto</a></li>
+      <li *ngIf="isLogueado()" class="nav-item">
+        <a class="btn ml-2 btn-warning" (click)="logout()">Salir</a></li>
+    </ul>
+  </div>
+</nav>

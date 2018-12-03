@@ -1,0 +1,67 @@
+<div class="container" style="padding-right: 250px;
+padding-left: 250px;
+margin-right: auto;
+margin-left: auto;
+margin-top: 50px;
+margin-bottom: 50px;">
+  <div class="card">
+    <header class="card-header">
+      <h4 class="card-title mt-2">Registro de Proveedor</h4>
+    </header>
+    <article class="card-body">
+      <form>
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Empresa</label>
+            <input [(ngModel)]="proveedor.empresa" type="text" name="empresa" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+          <div class="col form-group">
+            <label>RUC</label>
+            <input [(ngModel)]="proveedor.ruc" name="ruc" type="text" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row end.// -->
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Contacto</label>
+            <input [(ngModel)]="proveedor.contacto" name="contacto" type="text" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+          <div class="col form-group">
+            <label>DNI</label>
+            <input [(ngModel)]="proveedor.dni" name="dni" type="text" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row end.// -->
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" [(ngModel)]="proveedor.correo" name="correo" class="form-control" placeholder="">
+          <small class="form-text text-muted">Será mostrado a los usuarios interesados en sus productos.</small>
+        </div> <!-- form-group end.// -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Dirección</label>
+            <input type="text" [(ngModel)]="proveedor.direccion" name="direccion" class="form-control">
+          </div> <!-- form-group end.// -->
+          <div class="form-group col-md-6">
+            <label>Departamento</label>
+            <select id="inputState" class="form-control" name="departamentoId" [(ngModel)]="proveedor.departamentoId">
+              <option> Seleccionar</option>
+              <option value="1">Lima</option>
+              <option value="2">Arequipa</option>
+              <option value="3">Ica</option>
+
+            </select>
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row.// -->
+        <div class="form-group">
+          <label>Contraseña</label>
+          <input class="form-control" type="password" name="contrasena" [(ngModel)]="proveedor.contrasena">
+        </div> <!-- form-group end.// -->
+        <div class="form-group">
+          <button  (click)="registrarProveedor()" type="submit" class="btn btn-primary btn-block"> Registrar </button>
+        </div> <!-- form-group// -->
+        <small class="text-muted">Al registrarse, usted acepta nuestros <b>Terminos y Condiciones</b>.</small>
+      </form>
+    </article> <!-- card-body end .// -->
+
+  </div> <!-- card.// -->
+
+</div>

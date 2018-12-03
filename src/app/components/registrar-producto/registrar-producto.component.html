@@ -1,0 +1,151 @@
+<div class="container" style="padding-right: 250px;
+padding-left: 250px;
+margin-right: auto;
+margin-left: auto;
+margin-top: 50px;
+margin-bottom: 50px;">
+  <div class="card">
+    <header class="card-header">
+      <h4 class="card-title mt-2">Registro de Producto</h4>
+    </header>
+    <article class="card-body">
+      <form>
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Nombre</label>
+            <input [(ngModel)]="producto.nombre" type="text" name="nombre" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+          <div class="col form-group">
+            <label>Descripción</label>
+            <input [(ngModel)]="producto.descripcion" name="descripcion" type="text" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row end.// -->
+        <div class="form-row">
+          <div class="col form-group">
+            <label>Precio Mínimo</label>
+            <input [(ngModel)]="producto.precioMin" name="precioMin" type="text" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+          <div class="col form-group">
+            <label>Precio Máximo</label>
+            <input [(ngModel)]="producto.precioMax" name="precioMax" type="text" class="form-control" placeholder="">
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row end.// -->
+        <div class="form-group">
+          <label>Region</label>
+          <input type="text" [(ngModel)]="producto.region" name="region" class="form-control" placeholder="">
+        </div> <!-- form-group end.// -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Unidades</label>
+            <input type="text" [(ngModel)]="producto.medida" name="medida" class="form-control">
+          </div> <!-- form-group end.// -->
+          <div class="form-group col-md-6">
+            <label>Categoria</label>
+            <select id="inputState" class="form-control" name="categoria" [(ngModel)]="producto.categoria">
+              <option> Seleccionar</option>
+              <option *ngFor="let c of categorias" value="{{c?.codigo}}">{{c?.descripcion}}</option>
+            </select>
+          </div> <!-- form-group end.// -->
+        </div> <!-- form-row.// -->
+        <div class="form-group">
+          <label>Foto</label>
+          <input class="form-control" type="text" name="foto" [(ngModel)]="producto.foto">
+        </div> <!-- form-group end.// -->
+        <div class="form-group">
+          <label>Resumen</label>
+          <textarea class="form-control" type="text" name="resumen" [(ngModel)]="producto.resumen"></textarea>
+        </div> <!-- form-group end.// -->
+        <!--  <div class="form-group">
+          <button (click)="registrarProducto()" type="submit" class="btn btn-primary btn-block"> Registrar </button>
+        </div>  -->
+        <!-- form-group// -->
+      </form>
+    </article> <!-- card-body end .// -->
+
+    <header class="card-header">
+      <h4 class="card-title mt-2">Datos de Tarjeta</h4>
+    </header>
+    <article class="card">
+      <div class="card-body p-5">
+
+        <p> <img src="assets/images/icons/pay-visa.png">
+          <img src="assets/images/icons/pay-visa-el.png">
+          <img src="assets/images/icons/pay-mastercard.png">
+          <img src="assets/images/icons/pay-american-ex.png"> </p>
+        <!-- <p class="alert alert-success">Some text success or error</p> -->
+
+        <form role="form">
+          <div class="form-group">
+            <label for="username">Nombre completo</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input type="text" class="form-control" name="username" placeholder="" required="true">
+            </div> <!-- input-group.// -->
+          </div> <!-- form-group.// -->
+
+          <div class="form-group">
+            <label for="cardNumber">Número de la tarjeta</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+              </div>
+              <input type="text" class="form-control" name="cardNumber" placeholder="">
+            </div> <!-- input-group.// -->
+          </div> <!-- form-group.// -->
+
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label><span class="hidden-xs">Expiración</span> </label>
+                <div class="form-inline">
+                  <select class="form-control" style="width:45%">
+                    <option>MM</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+
+                  </select>
+                  <span style="width:10%; text-align: center"> / </span>
+                  <select class="form-control" style="width:45%">
+                    <option>YY</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label data-toggle="tooltip" title="" data-original-title="3 digitos de la parte tracera de la tarjeta">CVV
+                  <i class="fa fa-question-circle"></i></label>
+                <input class="form-control" required type="text">
+              </div> <!-- form-group.// -->
+            </div>
+          </div> <!-- row.// -->
+          <button (click)="registrarProducto()" class="subscribe btn btn-primary btn-block" type="submit"> Publicar
+          </button>
+        </form>
+      </div> <!-- card-body.// -->
+    </article> <!-- card.// -->
+
+
+
+  </div> <!-- card.// -->
+
+</div>

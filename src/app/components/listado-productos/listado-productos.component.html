@@ -1,0 +1,42 @@
+<section class="section-content bg padding-y">
+  <div class="container">
+
+    <div class="row">
+      <aside class="col-sm-3">
+
+        <div class="card card-filter">
+          <article class="card-group-item">
+            <header class="card-header">
+              <a class="" aria-expanded="true" href="#" data-toggle="collapse" data-target="#collapse22">
+                <i class="icon-action fa fa-chevron-down"></i>
+                <h6 class="title">Categorias</h6>
+              </a>
+            </header>
+            <div  class="filter-content collapse show" id="collapse22">
+              <div class="card-body">
+
+
+                <ul class="list-unstyled list-lg">
+                  <li *ngFor="let c of categorias"><a style="color:blue;cursor: pointer;" (click)="buscarCategoria(c.codigo)">{{c.descripcion}}</a></li>
+
+                </ul>
+              </div> <!-- card-body.// -->
+            </div> <!-- collapse .// -->
+          </article> <!-- card-group-item.// -->
+          
+
+        </div> <!-- card.// -->
+
+
+      </aside> <!-- col.// -->
+      <main class="col-sm-9">
+
+        <app-tarjeta-producto [items]="lstProductos"></app-tarjeta-producto>
+
+
+
+      </main> <!-- col.// -->
+    </div>
+
+  </div> <!-- container .//  -->
+</section>
